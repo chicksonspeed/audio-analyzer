@@ -199,6 +199,8 @@ analyzer.create_visualizations(results, 'output_dir')
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+**Bonus points for adding weird mood categories like "horny minimal."** 🎵
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
