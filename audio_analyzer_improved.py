@@ -98,7 +98,7 @@ class AudioAnalyzer:
         self.window = es.Windowing(type='hann')
         self.spectrum = es.Spectrum()
         self.bpm_estimator = es.PercivalBpmEstimator()
-        self.music_extractor = es.MusicExtractor(highlevel=True)
+        self.music_extractor = es.MusicExtractor()
         
     def get_file_duration(self, audio_file: str) -> float:
         """Get audio file duration without loading entire file into memory."""
@@ -315,20 +315,13 @@ class AudioAnalyzer:
         num_segments = int(np.ceil(self.file_duration / self.config.seg_len_s))
         logger.info(f"Processing {num_segments} segments")
         
-        # Process segments in parallel
+        # Process segments sequentially (Essentia objects can't be pickled)
         results = []
-        with ProcessPoolExecutor(max_workers=self.config.n_jobs) as executor:
-            # Submit all tasks
-            future_to_segment = {
-                executor.submit(self.process_segment, (i, audio_file, output_dir)): i 
-                for i in range(num_segments)
-            }
-            
-            # Collect results as they complete
-            for future in as_completed(future_to_segment):
-                result = future.result()
-                if result:
-                    results.append(result)
+        for i in range(num_segments):
+            result = self.process_segment((i, audio_file, output_dir))
+            if result:
+                results.append(result)
+            logger.info(f"Processed segment {i+1}/{num_segments}")
         
         if not results:
             raise ValueError("No segments were successfully processed")
