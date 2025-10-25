@@ -49,7 +49,7 @@ sudo apt install ffmpeg
 
 **Single File Analysis**:
 ```bash
-python audio_analyzer_improved.py your_track.mp3
+python audio_analyzer.py your_track.mp3
 ```
 
 **Batch Processing**:
@@ -59,7 +59,7 @@ python batch_analyzer.py /path/to/audio/files
 
 **With Custom Configuration**:
 ```bash
-python audio_analyzer_improved.py track.mp3 --config config_example.json --n-jobs 8
+python audio_analyzer.py track.mp3 --config config_example.json --n-jobs 8
 ```
 
 ## 📋 Mood Categories
@@ -128,12 +128,10 @@ Create a `config.json` file to customize analysis parameters:
 
 **Single File Analyzer**:
 ```bash
-python audio_analyzer_improved.py [OPTIONS] AUDIO_FILE
+python audio_analyzer.py [OPTIONS] AUDIO_FILE
 
 Options:
   --output-dir DIR     Output directory (default: analysis_results)
-  --n-jobs N          Number of parallel jobs (default: 4)
-  --config FILE       Configuration file path
   --verbose, -v       Enable verbose logging
 ```
 
@@ -152,15 +150,10 @@ Options:
 ### Programmatic Usage
 
 ```python
-from audio_analyzer_improved import AudioAnalyzer, AudioConfig
-
-# Create analyzer with custom config
-config = AudioConfig(n_jobs=8, seg_len_s=20.0)
-analyzer = AudioAnalyzer(config)
+import audio_analyzer
 
 # Analyze single file
-results = analyzer.analyze_audio('track.mp3', 'output_dir')
-analyzer.create_visualizations(results, 'output_dir')
+results = audio_analyzer.analyze_audio('track.mp3', 'output_dir')
 ```
 
 ## 📈 Performance
