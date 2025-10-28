@@ -1,0 +1,107 @@
+{
+  "target_sr": 44100,
+  "seg_len_s": 30.0,
+  "nfft": 2048,
+  "hop": 512,
+  "n_jobs": 4,
+  "tempo_range": [110.0, 160.0],
+  "bass_freq": 250.0,
+  "mids_freq_low": 250.0,
+  "mids_freq_high": 4000.0,
+  "mood_thresholds": {
+    "big_room": {
+      "mood_party": 0.7,
+      "bass": 0.15,
+      "tempo": 126,
+      "spectral_flux": 0.7
+    },
+    "circuit": {
+      "mood_party": 0.65,
+      "tempo": 125,
+      "spectral_flux": 0.6,
+      "bass": 0.1
+    },
+    "vocal_chop": {
+      "mood_happy": 0.6,
+      "mood_party": 0.5,
+      "mids": 0.12,
+      "highs": 0.05,
+      "tempo": 122,
+      "spectral_flux": 0.6
+    },
+    "funky": {
+      "mood_happy": 0.6,
+      "mids": 0.1,
+      "highs": 0.05,
+      "tempo": 120,
+      "spectral_flux": 0.5
+    },
+    "tribal": {
+      "mood_party": 0.5,
+      "highs": 0.06,
+      "tempo": 122,
+      "spectral_flux": 0.65
+    },
+    "raw": {
+      "mood_sad": 0.6,
+      "bass": 0.15,
+      "tempo": 135,
+      "spectral_flux": 0.7
+    },
+    "electro": {
+      "mood_happy": 0.5,
+      "bass": 0.12,
+      "mids": 0.08,
+      "tempo": 128,
+      "spectral_flux": 0.65
+    },
+    "future": {
+      "mood_happy": 0.6,
+      "bass": 0.1,
+      "mids": 0.1,
+      "tempo": 122,
+      "spectral_flux": 0.5
+    },
+    "euphoric": {
+      "mood_happy": 0.55,
+      "mids": 0.08,
+      "tempo": 120,
+      "spectral_flux": 0.4
+    },
+    "soulful": {
+      "mood_happy": 0.55,
+      "mood_sad": 0.3,
+      "mids": 0.12,
+      "tempo": 120
+    },
+    "progressive": {
+      "mood_happy": 0.5,
+      "bass": 0.08,
+      "mids": 0.1,
+      "spectral_flux_min": 0.4,
+      "spectral_flux_max": 0.6,
+      "tempo_min": 120,
+      "tempo_max": 128
+    },
+    "dark": {
+      "mood_sad": 0.5,
+      "bass": 0.12,
+      "mids": 0.1,
+      "spectral_flux": 0.5
+    },
+    "deep": {
+      "mood_sad": 0.4,
+      "bass": 0.1,
+      "mids": 0.12,
+      "highs": 0.05,
+      "tempo": 118
+    },
+    "ambient": {
+      "mood_sad": 0.55,
+      "bass": 0.1,
+      "mids": 0.08,
+      "highs": 0.04,
+      "spectral_flux": 0.3
+    }
+  }
+}

@@ -1,0 +1,8 @@
+essentia>=2.1b6
+soundfile>=0.13.1
+joblib>=1.5.2
+matplotlib>=3.10.7
+numpy>=2.3.4
+seaborn>=0.12.0
+pandas>=2.0.0
+tqdm>=4.65.0
